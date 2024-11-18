@@ -72,10 +72,8 @@ Exemplo de uso:
 
     fimDoPrograma
 
-    # main.py
-
+# main.py
 # Arquivo principal para a execução do compilador de linguagem fictícia.
-
 # Este programa lê um arquivo contendo código na linguagem fictícia, compila para Python e executa o código gerado.
 
     import sys
