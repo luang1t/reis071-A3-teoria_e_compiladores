@@ -74,11 +74,9 @@ Exemplo de uso:
 
     # main.py
 
-"""
-Arquivo principal para a execução do compilador de linguagem fictícia.
+#Arquivo principal para a execução do compilador de linguagem fictícia.
 
-Este programa lê um arquivo contendo código na linguagem fictícia, compila para Python e executa o código gerado.
-"""
+#Este programa lê um arquivo contendo código na linguagem fictícia, compila para Python e executa o código gerado.
 
     import sys
     from lexer import tokenize
@@ -137,12 +135,12 @@ Este programa lê um arquivo contendo código na linguagem fictícia, compila pa
         # Salva e executa o código Python gerado
         save_and_run(generated_code)
 
-# lexer.py
-"""
-Lexer para a linguagem fictícia.
+#lexer.py
 
-Responsável por transformar o código de entrada em uma lista de tokens, que serão analisados pelo parser.
-"""
+#Lexer para a linguagem fictícia.
+
+#Responsável por transformar o código de entrada em uma lista de tokens, que serão analisados pelo parser.
+
 
     import re
 
@@ -247,11 +245,11 @@ Responsável por transformar o código de entrada em uma lista de tokens, que se
     if __name__ == "__main__":
         test_lexer()
 
-# parser.py
-## O parser.py é responsável por realizar a análise sintática do código tokenizado, utilizando a gramática da linguagem fictícia, além de gerar código equivalente em Python. Ele também realiza uma análise semântica básica, como validação de declarações e compatibilidade de tipos.
+#parser.py
+#O parser.py é responsável por realizar a análise sintática do código tokenizado, utilizando a gramática da linguagem fictícia, além de gerar código equivalente em Python. Ele também realiza uma análise semântica básica, como validação de declarações e compatibilidade de tipos.
 
-# 1. Classe CodeGenerator
-# A classe CodeGenerator gerencia a geração do código Python a partir da análise sintática.
+#1. Classe CodeGenerator
+#A classe CodeGenerator gerencia a geração do código Python a partir da análise sintática.
 
     class CodeGenerator:
         def __init__(self):
@@ -271,8 +269,8 @@ Responsável por transformar o código de entrada em uma lista de tokens, que se
 
         def get_code(self):
             return "\n".join(self.code)
-# 2. Classe SemanticAnalyzer
-# A classe SemanticAnalyzer realiza verificações semânticas no código, como validação de variáveis e tipos.
+#2. Classe SemanticAnalyzer
+#A classe SemanticAnalyzer realiza verificações semânticas no código, como validação de variáveis e tipos.
 
     class SemanticAnalyzer:
         def __init__(self):
@@ -294,8 +292,8 @@ Responsável por transformar o código de entrada em uma lista de tokens, que se
                 raise ValueError(f"Erro Semântico: Tipo incompatível para '{var_name}', esperado '{var_type}' mas obteve '{expression_type}'.")
 
             
-# 3. Classe Parser
-# A classe Parser realiza a análise sintática do código tokenizado e utiliza as classes CodeGenerator e SemanticAnalyzer para gerar código Python e realizar validações.
+#3. Classe Parser
+#A classe Parser realiza a análise sintática do código tokenizado e utiliza as classes CodeGenerator e SemanticAnalyzer para gerar código Python e realizar validações.
 
     class Parser:
     def __init__(self, tokens):
@@ -317,9 +315,9 @@ Responsável por transformar o código de entrada em uma lista de tokens, que se
     def parse(self):
         self.program()
         return self.generator.get_code()
-# 4. Funções do Parser
-# Função Principal: program()
-# Analisa a estrutura principal do programa, verificando o início e o fim.
+#4. Funções do Parser
+#Função Principal: program()
+#Analisa a estrutura principal do programa, verificando o início e o fim.
 
     def program(self):
         if not self.match('PROGRAM'):
@@ -329,7 +327,7 @@ Responsável por transformar o código de entrada em uma lista de tokens, que se
         if not self.match('END_PROGRAM'):
             self.error("Esperado 'fimDoPrograma'")
 
-# Declaração de Variáveis: declara()
+#Declaração de Variáveis: declara()
 # Analisa declarações de variáveis e gera as inicializações correspondentes.
 
     def declara(self):
@@ -347,8 +345,8 @@ Responsável por transformar o código de entrada em uma lista de tokens, que se
             if not self.match('DOT'):
                 self.error("Esperado '.' após declaração")
 
-# Estruturas Condicionais: cmd_if()
-# Processa condições (dadoQue) e blocos opcionais (senao).
+#Estruturas Condicionais: cmd_if()
+#Processa condições (dadoQue) e blocos opcionais (senao).
 
     def cmd_if(self):
         if not self.match('LPAREN'):
